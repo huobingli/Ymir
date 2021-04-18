@@ -1,7 +1,7 @@
 import zipfile 
 
 from comm import comm
-
+from os
 
 """
     压缩指定文件夹
@@ -25,4 +25,12 @@ def zip(_input, _output):
     _zip.close()
 
 def uzzip(_input, _output):
-    pass
+    if not os.path.isfile(_input):
+        return 
+
+    # zfile = zipfile.ZipFile(_input,'r')
+    # for filename in zfile.namelist():
+    #     data = zfile.read(filename)
+    #     file = open(filename,'w+b')
+    #     file.write(data)
+    #     file.close()

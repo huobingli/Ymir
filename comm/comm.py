@@ -53,7 +53,7 @@ def __cp_files_to_dir(_from_path,  _to_path):
 
     print("cp:" + __from_path + " to " + __to_path)
     if os.path.isfile(__from_path):
-        shutil.copyfile(from_f, __to_path)
+        shutil.copyfile(__from_path, __to_path)
     else:
         __list = os.listdir(__from_path)
         for i in range(0, len(__list)):
