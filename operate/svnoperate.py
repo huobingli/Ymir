@@ -1,5 +1,5 @@
 from comm import comm 
-from os
+import os
 
 # 是否是svn目录，判断是否包含.svn文件夹
 def is_svn_dir(_work_dir):

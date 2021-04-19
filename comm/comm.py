@@ -7,6 +7,9 @@ def is_exists(_dir):
         return True
     return False
 
+def is_file(_path):
+    return os.path.isfile(_path)
+
 def mk_dir(_file):
     if not os.path.exists(_file):
         os.makedirs(_file)
@@ -41,8 +44,15 @@ def sync_exec(_cmd):
     print(_cmd)
     return os.system(_cmd)
 
+def merge_file(_path, _file_name):
+    if not is_exists(_path):
+        return False
+
+    ret_path = os.path.dirname(_path + "\\")
+    return ret_path + "\\" + _file_name
+
 # 拷贝目录
-def __cp_files_to_dir(_from_path,  _to_path):
+def cp_dir(_from_path,  _to_path):
     __from_path = _from_path
     __to_path   = _to_path
 
@@ -51,8 +61,7 @@ def __cp_files_to_dir(_from_path,  _to_path):
         
     mk_dir(__to_path)
 
-    print("cp:" + __from_path + " to " + __to_path)
-    if os.path.isfile(__from_path):
+    if is_file(__from_path):
         shutil.copyfile(__from_path, __to_path)
     else:
         __list = os.listdir(__from_path)
