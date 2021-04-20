@@ -40,11 +40,10 @@ def log_write_error(_key, _info):
     __logger.error(__log_str);
     
 
-
 if __name__ == "__main__":
     test()
 
+# for test
 def test():
     log_write_info("key" , "info1")
-    log_write_info("key" , "info2")
-    log_write_info("key" , "info3")
+    log_write_error("key" , "info2")
