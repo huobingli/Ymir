@@ -51,6 +51,11 @@ def merge_file(_path, _file_name):
     ret_path = os.path.dirname(_path + "\\")
     return ret_path + "\\" + _file_name
 
+def set_cur_dir(_dir):
+    __old_dir = os.getcwd()
+    os.chdir(_dir)
+    return __old_dir
+
 # 拷贝目录
 def cp_dir(_from_path,  _to_path):
     __from_path = _from_path
